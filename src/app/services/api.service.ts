@@ -68,22 +68,22 @@ export class ApiService {
    * Get villes
    * @returns Observable with array of Villes objects.
    */
-  public getCategories() {
+  public getVilles() {
     return this.http.get<Ville[]>(environment.host + '/villes');
   }
 
   /**
-   * Get trainings by category ID.
-   * @param id Category ID.
-   * @returns Observable with array of Training objects.
+   * Get hotels by ville ID.
+   * @param id Ville ID.
+   * @returns Observable with array of Hotel objects.
    */
-  public getTrainingsByCategory(id: number) {
+  public getHotelsByVille(id: number) {
     return this.http.get<Hotel[]>(
       environment.host + '/hotels/ville/' + id
     );
   }
 
-  
+
    /****************IMAGES*****************/
   /**
    * Get an image by ID.
