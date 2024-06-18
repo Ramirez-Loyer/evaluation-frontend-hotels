@@ -36,9 +36,9 @@ export class HotelsComponent implements OnInit {
         this.nameVilleSelected
       );
     }
-    /*this.getAllVilles();
+    this.getAllVilles();
     this.urlImg = environment.host;
-    this.searchService.searchKeyword$.subscribe((kw) => {
+    /*this.searchService.searchKeyword$.subscribe((kw) => {
       this.keyword = kw;
       this.filterHotels();
     }
