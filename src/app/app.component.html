@@ -2,13 +2,18 @@
   <a href="#" routerLink="/hotels">
     <h1 style="margin: 0 1em">SUPER-HOTEL.FR</h1>
   </a>
+  <div class="button-container">
+    <button class="nav-button">Ajouter Hôtel</button>
+    <button class="nav-button">Gérer hôtels</button>
+  </div>
+  <div class="container-connection">
+    <a width="50px" href="#">
+      <img class="image-connection" src="assets/img/avatar.png" width="70px" alt="user-icon">
+      <p class="user-legend-connection">[Admin]</p>
+    </a>
+  </div>
 </nav>
 
-<ul>
-<li>
-  <a routerLink="/hotels">Liste d'hôtels</a>
-</li>
-</ul>
 
 
 <router-outlet></router-outlet>

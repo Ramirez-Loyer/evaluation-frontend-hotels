@@ -24,15 +24,25 @@ export class CardsComponent implements OnInit {
     this.urlImage = environment.host + '/download/' + this.hotel?.id + new Date().getTime();
   }
 
-  onFileSelected(event:any) {
+    /**
+   * Méthode permettant uniquement à l'Admin de mettre à jour un hotel de l'ensemble des formations
+   * En renvoyant ici vers le composant dédié à la mise à jour
+   * @param hotel
+   */
+  
+    onUpdateHotel(hotel: Hotel) {
+      this.router.navigateByUrl('hotelDetail/' + hotel.id);
+    }
+
+    onFileSelected(event:any) {
     const file = event.target.files[0];
     if (file) {
       console.log('Fichier sélectionné:', file);
       this.validateBtnFile = true;
       this.selectedFile = event.target.files[0] as File;
+     }
     }
-  }
-  updateImg(id: number) {
+    updateImg(id: number) {
     if(this.hotel) {}
     const formData = new FormData();
     formData.append('file', this.selectedFile as File, this.selectedFile?.name);

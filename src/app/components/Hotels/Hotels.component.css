@@ -1,0 +1,34 @@
+.cartes {
+    margin: 0;
+    padding: 20px 0;
+    border-radius: 5px;
+  }
+  
+  .navigationCategories {
+    margin: 0;
+    width: 100%;
+    top: -60px;
+  }
+  
+  .navigationCategories a {
+    color: #000;
+    font-size: 20px;
+    margin: 0 20px;
+  }
+  
+  .all-trainings-cards-container {
+    margin-top: -40px;
+  }
+  
+  .title-category {
+    width: 50%;
+    background-color: #69f5ed;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .test {
+    background-color: green;
+  }
+  

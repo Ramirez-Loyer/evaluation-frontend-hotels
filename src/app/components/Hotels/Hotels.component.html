@@ -1,3 +1,55 @@
+<div class="container training-main-container">
+  <ng-container *ngIf="listHotels; else loading">
+    <nav class="navbar navbar-expand-lg navigationCategories">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" (click)="getAllHotels()">
+            <a class="nav-link">Toutes</a>
+          </li>
+          <li
+            class="nav-item"
+            *ngFor="let ville of listVilles"
+            (click)="displayHotelsByVille(ville.id, ville.name)"
+          >
+            <a class="nav-link">{{ ville.name }}</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container all-trainings-cards-container">
+      <div class="title-category">
+        <p class="h4">
+          Ville sélectionnée : <strong>{{ nameVilleSelected }}</strong>
+        </p>
+      </div>
+      <div class="row">
+        <h2
+          class="text-danger font-weight-bold"
+          *ngIf="listHotels.length == 0"
+        >
+          Aucun hôtel trouvé !
+        </h2>
+        <ng-container *ngFor="let hotel of listHotels">
+          <div class="col-lg-4 col-md-6 cartes">
+            <app-cards [hotel]="hotel"></app-cards>
+          </div>
+          <div
+           
+            class="col-lg-4 col-md-6 cartes"
+          >
+            <app-cards [hotel]="hotel"></app-cards>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #loading>
+    <div>Loading...</div>
+  </ng-template>
+</div>
+
+
+
 <div class="container">
     <ng-container *ngIf="listHotels else loading">
     <button (click)="getAllHotels()">Hotels </button>

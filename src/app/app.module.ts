@@ -7,6 +7,7 @@ import { HotelsComponent } from './components/Hotels/Hotels.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CardsComponent } from './components/cards/cards.component';
+import { ImageComponent } from './components/image/image.component';
 
 
 @NgModule({

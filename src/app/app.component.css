@@ -1,19 +1,55 @@
 .navigation {
+  background-color: red;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #f569de;
+    background-color: #F9BDF9;
   }
 
   .navigation a {
     color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  h1{
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    font-size: 60px;
+  }
+
+  .button-container{
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 300px;
   }
 
   .navbar {
     display: flex;
+    justify-content: 
+  }
+
+  .nav-button {
+    background-color: #91DDC2;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 10px;
+    border: none;
+  }
+
+  .container-connection{
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+    background-color: #F9BDF9;
+    margin-right: 10px;
   }
 
   

@@ -1,16 +1,22 @@
+<p>!</p>
+
 <div class="card" style="width: 18rem;">
-    <img src="bedroom.jpg" class="card-img-top" alt="hotel bedroom">
+    <img src="assets/img/bedroom6.jpg" class="card-img-top" alt="hotel room">
+    <img [src]="urlImage" alt="hotel image" class="card-img-top" >
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">{{hotel?.name}}</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">An item</li>
+      <li class="list-group-item">{{hotel?.name}}</li>
       <li class="list-group-item">A second item</li>
       <li class="list-group-item">A third item</li>
     </ul>
     <div class="card-body">
       <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Hotel{{hotel?.name}}</a>
+      <a href="#" class="card-link">Another link</a>
     </div>
   </div>
+
+  
+    
