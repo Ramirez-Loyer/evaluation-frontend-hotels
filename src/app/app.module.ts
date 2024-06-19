@@ -8,13 +8,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CardsComponent } from './components/cards/cards.component';
 import { ImageComponent } from './components/image/image.component';
+import { HotelDetailComponent } from './components/hotel-detail/hotel-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HotelsComponent,
-    CardsComponent
+    CardsComponent,
+    HotelDetailComponent
   ],
   imports: [
     BrowserModule,

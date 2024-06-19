@@ -19,14 +19,13 @@
     color: black;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-decoration: none;
-    font-size: 60px;
+    font-size: 35px;
   }
 
   .button-container{
-    background-color: blue;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: space-evenly;
     width: 300px;
   }
 

@@ -1,0 +1,136 @@
+
+<div class="container mt-3">
+
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="container">
+            <img [src]="imageUrl" class="img-thumbnail" alt="..." />
+            <div class="form-group mt-3">
+                <input
+                type="file"
+                class="form-control"
+                (change)="onFileSelected($event)"
+              />
+              <div *ngIf="error" class="alert alert-danger mt-2">{{ error }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="control-label">Ville : </label>
+            <input
+              type="text"
+              class="form-control"
+              [value]="myForm.get('ville')?.value?.name"
+              *ngIf="!isAdmin"
+              readonly
+            />
+            <select
+              formControlName="ville"
+              class="form-control"
+       
+            >
+              <option [ngValue]="null" disabled selected>
+                Selectionnez une ville
+              </option>
+              <option [ngValue]="this.hotel.ville" *ngIf="hotel.id != 0">
+                {{ this.hotel.ville.name }}
+              </option>
+              <option *ngFor="let ville of villes" [ngValue]="ville">
+                {{ ville.name }}
+              </option>
+            </select>
+          </div>
+          <div *ngIf="myForm.value.id" class="form-group mt-3">
+            <label class="control-label"> Id : </label>
+            <input
+              type="number"
+              formControlName="id"
+              class="form-control"
+              readonly
+            />
+          </div>
+          <div class="form-group mt-3">
+            <label class="control-label">Nom de l'hôtel : </label>
+            <input
+              type="text"
+              formControlName="name"
+              class="form-control"
+          
+            />
+            <div *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched"
+            class="alert alert-danger mt-2"
+            readonly
+          >
+            Nom invalide
+          </div>
+          </div>
+          <div class="form-group mt-3">
+            <label class="control-label">Address: </label>
+            <input
+              type="text"
+              formControlName="address"
+              class="form-control"
+           
+            />
+            <div *ngIf="myForm.get('phone')?.invalid && myForm.get('phone')?.touched"
+            class="alert alert-danger mt-2"
+          >
+            Phone invalide
+          </div>
+          </div>
+          <div class="form-group mt-3">
+            <label class="control-label">Prix : </label>
+            <input
+              type="number"
+              formControlName="price"
+              class="form-control"
+  
+            />
+            <div *ngIf="myForm.get('price')?.invalid && myForm.get('price')?.touched"
+            class="alert alert-danger mt-2"
+          >
+            Prix invalide
+          </div>
+          </div>
+          <div class="form-group mt-3">
+            <label class="control-label">Etoiles : </label>
+            <input
+              type="number"
+              formControlName="starsNumber"
+              class="form-control"
+              min="0"
+            />
+            <div *ngIf="myForm.get('starsNumber')?.invalid && myForm.get('starsNumber')?.touched"
+            class="alert alert-danger mt-2"
+          >
+            Nombre invalide
+          </div>
+          </div>
+          <div class="form-group mt-3">
+            <label class="control-label">Room number : </label>
+            <input
+              type="number"
+              formControlName="roomNumber"
+              class="form-control"
+              min="0"
+            />
+            <div *ngIf="myForm.get('roomNumber')?.invalid && myForm.get('roomNumber')?.touched"
+            class="alert alert-danger mt-2"
+          >
+            Room invalide
+          </div>
+          </div>
+       
+ 
+            <button
+              type="submit"
+              class="btn btn-lg mt-3 me-3 shadow"
+              style="background-color: #5984f1"
+              [disabled]="!isUpdateAllowed"
+            >Ajouter
+            </button>
+          </div>
+
+         

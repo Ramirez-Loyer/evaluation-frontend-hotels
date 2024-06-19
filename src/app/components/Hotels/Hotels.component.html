@@ -1,16 +1,13 @@
 <div class="container training-main-container">
   <ng-container *ngIf="listHotels; else loading">
-    <nav class="navbar navbar-expand-lg navigationCategories">
+    <nav class="navbar navbar-expand-lg navigationVilles">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item" (click)="getAllHotels()">
-            <a class="nav-link">Toutes</a>
+          <li class="nav-item active" (click)="getAllHotels()">
+            <a class="nav-link">Tous</a>
           </li>
-          <li
-            class="nav-item"
-            *ngFor="let ville of listVilles"
-            (click)="displayHotelsByVille(ville.id, ville.name)"
-          >
+          <li class="nav-item active" *ngFor="let ville of listVilles"
+            (click)="displayHotelsByVille(ville.id, ville.name)">
             <a class="nav-link">{{ ville.name }}</a>
           </li>
         </ul>
@@ -27,16 +24,10 @@
           class="text-danger font-weight-bold"
           *ngIf="listHotels.length == 0"
         >
-          Aucun hôtel trouvé !
+          Aucune formation trouvée !
         </h2>
         <ng-container *ngFor="let hotel of listHotels">
           <div class="col-lg-4 col-md-6 cartes">
-            <app-cards [hotel]="hotel"></app-cards>
-          </div>
-          <div
-           
-            class="col-lg-4 col-md-6 cartes"
-          >
             <app-cards [hotel]="hotel"></app-cards>
           </div>
         </ng-container>
@@ -51,38 +42,24 @@
 
 
 <div class="container">
-    <ng-container *ngIf="listHotels else loading">
-    <button (click)="getAllHotels()">Hotels </button>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th> <th>NOM</th> <th>PHONE</th> <th>ADRESS</th> <th>PRIX</th> 
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let hotel of listHotels">
-                <td>{{hotel.id}}</td>
-                <td>{{hotel.name}}</td>
-                <td>{{hotel.phone}}</td>
-                <td>{{hotel.address}}</td>
-                <td>{{hotel.price}}</td>
-            </tr>
-        </tbody>
-        </table>
-    </ng-container>
-</div>>
-
-
-
-    <ng-template #loading>
-      <div>Loading...</div>
-    </ng-template>
-
-  
-
-  <!--<li class="nav-item" (click)="getAllHotels()">
-              <a class="nav-link">Toutes</a>
-            </li>-->
-            <!--<li *ngFor="let ville of listVilles" (click)="displayHotelsByVille(ville.id, ville.name)">
-              <a class="nav-link">{{ ville.name }}</a>
-            </li>-->
+  <ng-container *ngIf="listHotels else loading">
+  <button (click)="getAllHotels()">Hotels </button>
+      <table class="table table-striped">
+          <thead>
+          <tr>
+              <th>ID</th> <th>NOM</th> <th>PHONE</th> <th>ADRESS</th> <th>PRIX</th> <th>VILLE</th> <th>IMAGE</th> 
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let hotel of listHotels">
+              <td>{{hotel.id}}</td>
+              <td>{{hotel.name}}</td>
+              <td>{{hotel.phone}}</td>
+              <td>{{hotel.address}}</td>
+              <td>{{hotel.price}}</td>
+              <td>{{hotel.ville.name}}</td>
+          </tr>
+      </tbody>
+      </table>
+  </ng-container>
+</div>

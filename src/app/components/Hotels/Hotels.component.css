@@ -1,28 +1,37 @@
 .cartes {
-    margin: 0;
-    padding: 20px 0;
+    padding-bottom: 20px;
+    padding-top:  20px;
+    padding-left: 30px;
     border-radius: 5px;
+    align-items: center;
+    justify-content: space-evenly;
   }
   
-  .navigationCategories {
+  .navigationVilles {
+    background-color: #FCEAAA;
     margin: 0;
-    width: 100%;
-    top: -60px;
+    width: 1800px;
+    /*top: 30px;*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   
   .navigationCategories a {
+    background-color: grey;
     color: #000;
     font-size: 20px;
     margin: 0 20px;
   }
   
   .all-trainings-cards-container {
-    margin-top: -40px;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: space-evenly;
   }
   
   .title-category {
     width: 50%;
-    background-color: #69f5ed;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -32,3 +41,6 @@
     background-color: green;
   }
   
+  .training-main-container{
+    width: 1500px;
+  }

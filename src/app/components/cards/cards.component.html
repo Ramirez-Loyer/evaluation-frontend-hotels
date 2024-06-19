@@ -1,22 +1,19 @@
-<p>!</p>
 
+<div *ngIf="hotel" class="container">
 <div class="card" style="width: 18rem;">
-    <img src="assets/img/bedroom6.jpg" class="card-img-top" alt="hotel room">
-    <img [src]="urlImage" alt="hotel image" class="card-img-top" >
+    <a (click)="onUpdateHotel(hotel)">
+        <img src="assets/img/bedroom6.jpg" class="card-img-top" alt="hotel room">
+    </a>
     <div class="card-body">
-      <h5 class="card-title">{{hotel?.name}}</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <strong><h5 class="card-title">{{hotel?.name}}</h5></strong>
+      <p>{{hotel?.ville?.name}}</p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{hotel?.name}}</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
+     
+      <li class="list-group-item">N° étoiles : {{hotel?.starsNumber}}</li>
+      <li class="list-group-item">Prix : $ {{hotel?.price}}</li>
     </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
   </div>
-
+</div>
   
     
