@@ -1,0 +1,33 @@
+<div class="container">
+    <ng-container *ngIf="listHotels else loading">
+    <button (click)="getAllHotels()">Hotels </button>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th> <th>NOM</th> <th>PHONE</th> <th>ADRESS</th> <th>PRIX</th> <th>VILLE</th> <th>MODIFIER</th> <th>SUPPRIMER</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let hotel of listHotels">
+                <td>{{hotel.id}}</td>
+                <td>{{hotel.name}}</td>
+                <td>{{hotel.phone}}</td>
+                <td>{{hotel.address}}</td>
+                <td>{{hotel.price}}</td>
+                <td>{{hotel.ville.name}}</td>
+                <td>
+                    <button>Modifier</button>
+                </td>
+                <td>
+                    <button>Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+    </ng-container>
+  </div>
+
+  <ng-template #loading>
+    <div>Loading...</div>
+  </ng-template>
+

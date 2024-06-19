@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CardsComponent } from './components/cards/cards.component';
 import { ImageComponent } from './components/image/image.component';
 import { HotelDetailComponent } from './components/hotel-detail/hotel-detail.component';
+import { HotelsListComponent } from './components/hotels-list/hotels-list.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { HotelDetailComponent } from './components/hotel-detail/hotel-detail.com
     AppComponent,
     HotelsComponent,
     CardsComponent,
-    HotelDetailComponent
+    HotelDetailComponent,
+    HotelsListComponent
   ],
   imports: [
     BrowserModule,
