@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HotelsComponent } from './components/Hotels/Hotels.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CardsComponent } from './components/cards/cards.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HotelsComponent
+    HotelsComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
