@@ -1,31 +1,28 @@
-<div class="container training-main-container">
-  <ng-container *ngIf="listHotels; else loading">
-    <nav class="navbar navbar-expand-lg navigationVilles">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active" (click)="getAllHotels()">
-            <a class="nav-link">Tous</a>
-          </li>
-          <li class="nav-item active" *ngFor="let ville of listVilles"
-            (click)="displayHotelsByVille(ville.id, ville.name)">
-            <a class="nav-link">{{ ville.name }}</a>
-          </li>
-        </ul>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid" >
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="/hotels">Toutes les villes</a>
+        <div *ngFor="let ville of listVilles"
+        (clic)="displayHotelsByVille(ville.id, ville.name)">
+          <a class="nav-link">nomville{{ ville.name }}</a>
+        </div>
       </div>
-    </nav>
-    <div class="container all-trainings-cards-container">
-      <div class="title-category">
+    </div>
+  </div>
+</nav>
+
+
+
+    <div class="container all-hotels-cards-container">
+      <div class="title-ville">
         <p class="h4">
           Ville sélectionnée : <strong>{{ nameVilleSelected }}</strong>
         </p>
       </div>
       <div class="row">
-        <h2
-          class="text-danger font-weight-bold"
-          *ngIf="listHotels.length == 0"
-        >
-          Aucune formation trouvée !
-        </h2>
+      
+
         <ng-container *ngFor="let hotel of listHotels">
           <div class="col-lg-4 col-md-6 cartes">
             <app-cards [hotel]="hotel"></app-cards>
@@ -33,10 +30,10 @@
         </ng-container>
       </div>
     </div>
-  </ng-container>
+
   <ng-template #loading>
     <div>Loading...</div>
   </ng-template>
-</div>
+
 
 

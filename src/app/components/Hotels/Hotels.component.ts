@@ -38,27 +38,9 @@ export class HotelsComponent implements OnInit {
     }
     this.getAllVilles();
     this.urlImg = environment.host;
-    /*this.searchService.searchKeyword$.subscribe((kw) => {
-      this.keyword = kw;
-      this.filterHotels();
-    }
-    )*/;
   }
 
-    /**
-   * Filter hotels based on the keyword.
-   */
-  filterHotels() {
-    if (this.keyword === '') {
-      this.listHotels = this.listFiltredHotels; //
-    } else {
-      this.listHotels = this.listFiltredHotels?.filter((hotel) =>
-        hotel.name.toLowerCase().includes(this.keyword)
-      );
-    }
-  }
 
-  
   /**
    * Méthode qui renvoi à partir de l'Api toutes les hotels accessibles
    * en cas de problème avec l'api, un message d'erreur sera relayé et affiché
@@ -76,15 +58,10 @@ export class HotelsComponent implements OnInit {
    */
   getAllHotels() {
     this.apiService.getHotels().subscribe({
-      next: (data) => (
-        (this.listHotels = data), (this.listFiltredHotels = data)
-      ),
+      next: (data) => (this.listHotels = data),
       error: (err) => (this.error = err.message),
       complete: () => (this.error = null),
     });
-    this.VilleServiceService.clearSelectedIdVille();
-    this.VilleServiceService.clearSelectedNameVille();
-    this.nameVilleSelected = "Toutes";
   }
 
   /**

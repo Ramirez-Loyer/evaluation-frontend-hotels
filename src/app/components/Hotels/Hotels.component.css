@@ -17,14 +17,14 @@
     justify-content: space-between;
   }
   
-  .navigationCategories a {
+  .navigationVilles a {
     background-color: grey;
     color: #000;
     font-size: 20px;
     margin: 0 20px;
   }
   
-  .all-trainings-cards-container {
+  .all-hotels-cards-container {
     margin-top: 30px;
     align-items: center;
     justify-content: space-evenly;
