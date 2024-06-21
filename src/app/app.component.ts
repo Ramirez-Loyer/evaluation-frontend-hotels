@@ -12,6 +12,10 @@ export class AppComponent {
   constructor(
     private router: Router
   ) {
-    
+
+  }
+
+  newHotel(): void {
+    this.router.navigateByUrl('hotelDetail/0');
   }
 }

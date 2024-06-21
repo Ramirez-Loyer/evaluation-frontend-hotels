@@ -1,6 +1,6 @@
 <div class="container">
     <ng-container *ngIf="listHotels else loading">
-        <table class="table table-striped">
+        <table class="table table-pink table-striped">
             <thead>
             <tr>
                 <th>ID</th> <th>NOM</th> <th>PHONE</th> <th>ADRESS</th> <th>PRIX</th> <th>VILLE</th> <th>MODIFIER</th> <th>SUPPRIMER</th>
@@ -18,7 +18,7 @@
                     <button>Modifier</button>
                 </td>
                 <td>
-                    <button>Supprimer</button>
+                    <button (click)="onDeleteHotel(hotel)">Supprimer</button>
                 </td>
             </tr>
         </tbody>

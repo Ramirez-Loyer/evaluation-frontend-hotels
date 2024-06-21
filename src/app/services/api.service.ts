@@ -8,7 +8,7 @@ import { Ville } from '../model/ville.model';
   providedIn: 'root'
 })
 export class ApiService {
-
+  private apiUrl = 'http://localhost:8080';
 
   /**
    * Constructor for ApiService.
@@ -68,7 +68,7 @@ export class ApiService {
    * Get villes
    * @returns Observable with array of Villes objects.
    */
-  public getVilles() {
+ public getVilles() {
     return this.http.get<Ville[]>(environment.host + '/villes');
   }
 

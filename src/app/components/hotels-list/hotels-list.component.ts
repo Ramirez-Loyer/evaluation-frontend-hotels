@@ -38,29 +38,13 @@ export class HotelsListComponent implements OnInit {
      }
      this.getAllVilles();
      this.urlImg = environment.host;
-     /*this.searchService.searchKeyword$.subscribe((kw) => {
-       this.keyword = kw;
-       this.filterHotels();
-     }
-     )*/;
+ ;
    }
  
-     /**
-    * Filter hotels based on the keyword.
-    */
-   filterHotels() {
-     if (this.keyword === '') {
-       this.listHotels = this.listFiltredHotels; //
-     } else {
-       this.listHotels = this.listFiltredHotels?.filter((hotel) =>
-         hotel.name.toLowerCase().includes(this.keyword)
-       );
-     }
-   }
- 
+
    
    /**
-    * Méthode qui renvoi à partir de l'Api toutes les hotels accessibles
+    * Méthode qui renvoi à partir de l'Api toutes les villes accessibles
     * en cas de problème avec l'api, un message d'erreur sera relayé et affiché
     */
    getAllVilles() {
@@ -95,7 +79,7 @@ export class HotelsListComponent implements OnInit {
    onDeleteHotel(hotel: Hotel) {
      if (confirm('Vous êtes sur de vouloir supprimer cet hôtel ?')) {
        this.apiService.delHotel(hotel).subscribe({
-         next: (data) => console.log(data),
+         next: (data) => (console.log("Suppresion OK !")),
          error: (err) => (this.error = err.message),
          complete: () => this.getAllHotels(),
        });

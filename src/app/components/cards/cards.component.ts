@@ -22,6 +22,7 @@ export class CardsComponent implements OnInit {
 
   ngOnInit(): void {
     this.urlImage = environment.host + '/download/' + this.hotel?.id + new Date().getTime();
+    this.cdr.detectChanges();
   }
 
     /**

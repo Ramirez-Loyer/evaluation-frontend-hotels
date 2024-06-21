@@ -5,7 +5,7 @@
         <a class="nav-link active" aria-current="page" href="/hotels">Toutes les villes</a>
         <div *ngFor="let ville of listVilles"
         (clic)="displayHotelsByVille(ville.id, ville.name)">
-          <a class="nav-link">nomville{{ ville.name }}</a>
+          <a class="nav-link">{{ ville.name }}</a>
         </div>
       </div>
     </div>
